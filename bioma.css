@@ -1,0 +1,207 @@
+body, body > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.titulo-neon {
+    margin-top: 0 !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: radial-gradient(circle at center, #1a0030 0%, #070013 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0; 
+}
+
+.card-floresta {
+    width: 95%;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: clamp(15px, 4vw, 30px); 
+    background: radial-gradient(circle at top left, #0b0c2a, #1a1a3b);
+    border: 2px solid #6f7cff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(111, 124, 255, 0.5);
+    color: #E0E0FF;
+    line-height: 1.6;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-floresta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(111, 124, 255, 0.7);
+}
+
+.titulo-neon {
+    text-align: center;
+    color: #4A90E2;
+    text-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-top: 0;      
+    padding-top: 10px;
+}
+
+.introducao {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: clamp(0.9rem, 2.5vw, 1rem); 
+}
+
+.subtitulo {
+    color: #A0C3FF;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: clamp(1.1rem, 3vw, 1.3rem); 
+}
+
+p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    text-align: justify;
+}
+
+h3 {
+    text-align: center;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    -webkit-overflow-scrolling: touch;
+}
+
+.slides {
+    display: flex;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    scroll-snap-align: center;
+    border-radius: 15px;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-btn {
+    position: absolute;
+    bottom: 15px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: rgba(111, 124, 255, 0.7);
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+
+
+.voltar-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.05);
+    border: 2px solid #c88bff;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 12px 25px;
+    box-shadow: 0 0 15px rgba(200,139,255,0.3);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.4s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.voltar-btn.visivel {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+.voltar-btn:hover {
+    background: #c88bff;
+    color: #1a0030;
+    box-shadow: 0 0 30px rgba(200,139,255,0.6);
+}
+
+
+
+.tabela-container {
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid rgba(74, 144, 226, 0.5); 
+    border-radius: 4px;
+    overflow: hidden; 
+}
+
+.linha-sensor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr; 
+    border-bottom: 2px solid rgba(74, 144, 226, 0.2); 
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.linha-sensor:last-child {
+    border-bottom: none;
+}
+
+.coluna-sensor, .coluna-mede, .coluna-crucial {
+    padding: 10px 8px; 
+    border-right: 2px solid rgba(74, 144, 226, 0.2); 
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+}
+
+.coluna-crucial {
+    border-right: none;
+}
+
+.titulo-coluna {
+    font-weight: bold;
+    color: #4A90E2;
+    background-color: rgba(74, 144, 226, 0.1);
+    font-size: clamp(0.8rem, 2.5vw, 1rem) !important; 
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floresta - EYWA</title>
+  <link rel="stylesheet" href="bioma.css" />
+</head>
+
+<body>
+
+  <div class="card-floresta">
+    <h2 class="titulo-neon">Monitoramento Florestal</h2>
+
+    <p class="introducao" style="font-size: 13px;">A floresta pulsa com uma vida de séculos, e hoje, esse ritmo ancestral está ameaçado. Nosso sistema de monitoramento usa tecnologia acessível para interpretar os sussurros da mata, transformando a umidade do ar, os sons da fauna e o ciclo das chuvas em dados que todos podemos compreender.</p>
+
+    <h3 class="subtitulo">Por que estes sensores?</h3>
+    
+    <div class="tabela-container">
+        <div class="linha-sensor">
+            <span class="coluna-sensor titulo-coluna">Sensor</span>
+            <span class="coluna-mede titulo-coluna">Mede o Quê?</span>
+            <span class="coluna-crucial titulo-coluna">Por que é Crucial?</span>
+        </div>
+        
+        <div class="linha-sensor">
+            <span class="coluna-sensor">Temperatura  Umidade</span>
+            <span class="coluna-mede">O clima principal.</span>
+            <span class="coluna-crucial">Variações extremas indicam estresse que afetam a fauna/flora.</span>
+        </div>
+        
+        <div class="linha-sensor">
+            <span class="coluna-sensor">Chuva  (Pluviômetro)</span>
+            <span class="coluna-mede">O ciclo hídrico.</span>
+            <span class="coluna-crucial">Vital para prever secas ou inundações no ecossistema.</span>
+        </div>
+        
+        <div class="linha-sensor">
+            <span class="coluna-sensor">Movimento  (Presença)</span>
+            <span class="coluna-mede">Movimentação da vida.</span>
+            <span class="coluna-crucial">Mapeia a movimentação de animais e detecta ações humanas.</span>
+        </div>
+    </div>
+
+    <div class="slider-wrapper">
+            <button class="slider-btn prev-btn">&#10094;</button>
+            <div class="slider">
+                <div class="slides">
+                    <img src="f1.png" alt="Protótipo Sensores Floresta" >
+                    <img src="f2.png" alt="Floresta 2" >
+                    <img src="f3.png" alt="Floresta 3" >
+                    <img src="f4.png" alt="Floresta 4" >
+                </div>
+            </div>
+            <button class="slider-btn next-btn">&#10095;</button>
+      </div>
+
+    <h3 class="subtitulo">Facilidade para Aplicação Real</h3>
+    
+        <p style="font-size: 13px; text-align: justify;">
+          Baixo Custo: O desenvolvimento e a instalação são baratos, permitindo monitoramento em grande escala.
+        </p>
+
+        <p style="font-size: 13px; text-align: justify;">
+          Energia Limpa: Na aplicação prática é alimentado por Painéis Solares, garantindo operação contínua e sustentável.
+        </p>
+
+        <p style="font-size: 13px; text-align: justify;">
+          Comunicação Remota: Na aplicação prática usa Antenas Via Satélite para transmitir dados em tempo real, mesmo nas áreas mais distantes.
+        </p>
+</div>
+
+  <div>
+    <a href="index.html" class="voltar-btn">← Página Inicial</a>
+  </div>
+
+<script>
+        const voltarBtn = document.querySelector('.voltar-btn');
+        let inactivityTimer;
+
+        function showButton() {
+            voltarBtn.classList.add('visivel');
+        }
+
+        function hideButton() {
+            voltarBtn.classList.remove('visivel');
+        }
+
+        function resetTimer() {
+            clearTimeout(inactivityTimer);
+            showButton();
+            inactivityTimer = setTimeout(hideButton, 2000);
+        }
+
+        window.addEventListener('scroll', resetTimer);
+        window.addEventListener('mousemove', resetTimer);
+
+        const slider = document.querySelector('.slider');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        
+        nextBtn.addEventListener('click', () => {
+            const slideWidth = slider.clientWidth;
+            slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+
+        });
+
+        
+        prevBtn.addEventListener('click', () => {
+            const slideWidth = slider.clientWidth;
+            slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        });
+
+</script>
+
+
+</body>
+
+</html>
